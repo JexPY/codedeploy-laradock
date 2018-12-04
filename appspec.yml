@@ -1,0 +1,18 @@
+version: 0.1
+os: linux
+files:
+  - source: /
+    destination: /
+hooks:
+  BeforeInstall:
+    - location: deploy-scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: deploy-scripts/deploy_laravel.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: deploy-scripts/run_laradock_commands.sh
+      timeout: 300
+      runas: root
