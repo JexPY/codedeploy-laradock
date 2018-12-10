@@ -2,9 +2,9 @@
 #!/bin/bash
 
 # Exit on error
-set -o errexit -o pipefail
+# set -o errexit -o pipefail
 
-# Update yum
+# Update apt
 apt update -y
 
 apt autoremove

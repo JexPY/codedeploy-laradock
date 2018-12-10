@@ -1,8 +1,12 @@
-cd ./laradock
+# cd ./seemee-api/laradock/
 
-#up containers
-sudo docker-compose up -d mysql phpmyadmin redis nginx workspace
+# Docker
+export HOME=/home/ubuntu
 
-#migration
-sudo docker-compose exec workspace php artisan migrate
+cd ~
+cd ./seemee-api/laradock
+
+docker-compose up -d mysql phpmyadmin redis nginx workspace
+
+docker-compose exec -T workspace php artisan migrate
 
